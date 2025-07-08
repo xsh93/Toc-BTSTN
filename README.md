@@ -45,23 +45,23 @@ The model training requires two datasets as input, including the `Observation` a
 ***Observation dataset***
 |*Batch*|*Time* |*Parameter 1*|*Parameter 2*|*Parameter 3*|...|
 |:-:    |:-:    |:-:          |:-:          |:-:          |:-:|
-|__A1__ |__T1__ |2.1          |5.0          |5.0          |...|
-|__A1__ |__T2__ |1.4          |4.3          |5.0          |...|
-|__A1__ |__T3__ |3.8          |0            |5.0          |...|
-|__B1__ |__T1__ |2.1          |5.0          |5.0          |...|
-|__B1__ |__T3__ |1.4          |4.3          |5.0          |...|
-|__B1__ |__T4__ |3.8          |0            |5.0          |...|
-|__...__|__...__|...          |...          |5.0          |...|
+|__A1__ |__T1__ |2.1          |5.0          |0.2          |...|
+|__A1__ |__T2__ |NA           |4.3          |0.8          |...|
+|__A1__ |__T3__ |3.8          |NA           |0.1          |...|
+|__B1__ |__T1__ |2.1          |5.0          |NA           |...|
+|__B1__ |__T3__ |1.4          |4.3          |0.7          |...|
+|__B1__ |__T4__ |3.8          |0            |1.0          |...|
+|__...__|__...__|...          |...          |...          |...|
 
 ***Perturbation dataset***
 |*Batch*|*Time* |*Perturbation 1*|*Perturbation 2*|...|
 |:-:    |:-:    |:-:             |:-:             |:-:|
-|__A1__ |__T1__ |2.1             |5.0             |...|
-|__A1__ |__T2__ |1.4             |4.3             |...|
-|__A1__ |__T3__ |3.8             |0               |...|
-|__B1__ |__T1__ |2.1             |5.0             |...|
-|__B1__ |__T3__ |1.4             |4.3             |...|
-|__B1__ |__T4__ |3.8             |0               |...|
+|__A1__ |__T1__ |1.2             |10.0            |...|
+|__A1__ |__T2__ |1.2             |10.0            |...|
+|__A1__ |__T3__ |1.1             |15.0            |...|
+|__B1__ |__T1__ |0.2             |5.0             |...|
+|__B1__ |__T3__ |0.5             |6.0             |...|
+|__B1__ |__T4__ |0.2             |5.0             |...|
 |__...__|__...__|...             |...             |...|
 
 ## 5. Read Your Data
@@ -105,7 +105,7 @@ train_set = ['Train_1', 'Train_2', 'Train_3', 'Train_4', 'Train_5', 'Train_6']
 odata_train = odata.loc[odata['batch'].isin(train_set), :].reset_index(drop=True)
 pdata_train = pdata.loc[pdata['batch'].isin(train_set), :].reset_index(drop=True)
 
-saving_path = './model/'
+saving_path = './analysis/model/'
 saving_prefix = 'vdp_model'
 os.makedirs(os.path.join(saving_path, saving_prefix), exist_ok=True)
 

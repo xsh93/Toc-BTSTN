@@ -33,10 +33,10 @@ sys.path.insert(0, 'your_path/Toc-BTSTN')
 ```
 
 ### Importing BTSTN
-Now, you can import COMPASS and its key components:
+Now, you can import BTSTN from scripts.train:
 
 ```python
-from compass import BTSTN
+from scripts.train import BTSTN
 ```
 
 ## 4. Data Format

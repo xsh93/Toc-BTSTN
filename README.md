@@ -1,4 +1,4 @@
-<h2 align="left">Toc-BTSTN (version 1.0)</h2>
+<h1 align="left">Toc-BTSTN (version 1.0)</h1>
 
 <p align="left">
     <a href="https://www.python.org/"><img alt="Python version" src="https://img.shields.io/badge/Python-v3.9-blue?logo=python&logoColor=white"></a>

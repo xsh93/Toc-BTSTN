@@ -122,8 +122,8 @@ loss = obj.fit(
     gpu_id=-1,
     saving_path=saving_path,
     saving_prefix=saving_prefix,
-    ckpt_path="./model/",
-    ckpt_prefix="vdp_model",
+    ckpt_path=saving_path,
+    ckpt_prefix=saving_prefix,
     ckpt_freq=50,
     ckpt_resume_epoch=None,
 )

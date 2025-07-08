@@ -97,7 +97,7 @@ obj = BTSTN(
 ```
 
 ## 7. Train Your Model
-You can train the model for ***Van der Pol*** system with following codes or use the pre-trained model ***vdp_model*** for prediction.
+You can train the model for ***Van der Pol*** system with following codes or use the pre-trained model ***vdp_model*** [here](https://github.com/xsh93/Toc-BTSTN/tree/main/analysis/model/vdp_model) for prediction.
 
 ```python
 # Train data
@@ -130,7 +130,7 @@ loss = obj.fit(
 ```
 
 ## 8. Perturbation prediction
-The pre-trained ***vdp_model*** is used for trajectory prediction under specified perturbation sequence of ***μ***.
+The pre-trained ***vdp_model*** [here](https://github.com/xsh93/Toc-BTSTN/tree/main/analysis/model/vdp_model) is used for trajectory prediction under specified perturbation sequence of ***μ***.
 ```python
 # Test data
 train_set = ['Test_1']
@@ -158,7 +158,7 @@ pred_data = obj.forecast(
 ```
 
 ## 9. Control strategy optimization
-The pre-trained ***vdp_model*** is used for control strategy optimization for achieving pre-specified targets.
+The pre-trained ***vdp_model*** [here](https://github.com/xsh93/Toc-BTSTN/tree/main/analysis/model/vdp_model) is used for control strategy optimization for achieving pre-specified targets.
 
 ```python
 # Test data

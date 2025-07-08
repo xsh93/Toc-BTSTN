@@ -105,6 +105,10 @@ train_set = ['Train_1', 'Train_2', 'Train_3', 'Train_4', 'Train_5', 'Train_6']
 odata_train = odata.loc[odata['batch'].isin(train_set), :].reset_index(drop=True)
 pdata_train = pdata.loc[pdata['batch'].isin(train_set), :].reset_index(drop=True)
 
+saving_path = './model/'
+saving_prefix = 'vdp_model'
+os.makedirs(os.path.join(saving_path, saving_prefix), exist_ok=True)
+
 # Train model
 loss = obj.fit(
     odata=odata_train,
@@ -116,8 +120,8 @@ loss = obj.fit(
     patience=50,
     batch_size=1500,
     gpu_id=-1,
-    saving_path="./model/",
-    saving_prefix="vdp_model",
+    saving_path=saving_path,
+    saving_prefix=saving_prefix,
     ckpt_path="./model/",
     ckpt_prefix="vdp_model",
     ckpt_freq=50,

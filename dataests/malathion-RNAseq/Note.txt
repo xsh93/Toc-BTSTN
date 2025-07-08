@@ -1,0 +1,4 @@
+The original time-series transcriptome data is available in the GEO database under accession code GSE200822.
+
+Reference:
+Hasnain, A., Balakrishnan, S., Joshy, D.M. et al. Learning perturbation-inducible cell states from observability analysis of transcriptome dynamics. Nat Commun 14, 3148 (2023). https://doi.org/10.1038/s41467-023-37897-9

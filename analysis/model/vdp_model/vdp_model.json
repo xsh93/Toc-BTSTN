@@ -1,0 +1,34 @@
+{
+    "model_name": "m0121-d1-01",
+    "model_params": {
+        "o_features": 2,
+        "p_features": 1,
+        "o_hid_dims": 2,
+        "g_inner": 32,
+        "g_layer": 6,
+        "g_activation": {
+            "fc_name": "relu"
+        },
+        "g_dropout": 0,
+        "d_inner": 32,
+        "d_layer": 1,
+        "d_activation": {
+            "fc_name": "relu"
+        },
+        "d_dropout": 0,
+        "unit": 0.1,
+        "dropna": false,
+        "scale": "MinMax"
+    },
+    "train_params": {
+        "max_gap": 15,
+        "learning_rate": 0.01,
+        "decay_gamma": 0.98,
+        "epoch": 500,
+        "patience": 30,
+        "batch_size": 1000,
+        "gpu_id": -1,
+        "ckpt_freq": 50,
+        "ckpt_resume_epoch": null
+    }
+}

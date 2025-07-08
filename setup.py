@@ -11,6 +11,7 @@ setup(
         'torch==2.7.0',
         'numpy==2.0.2',
         'pandas==2.2.3',
-        'scikit-learn==1.6.1'
+        'scikit-learn==1.6.1',
+        'tqdm==4.67.1'
     ]
 )

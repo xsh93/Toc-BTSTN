@@ -7,7 +7,7 @@
 </p>
 
 ## 1. Introduction
-`Toc-BTSTN` is a Python package designed for modeling the metabolic responses to perturbations and dynamically optimizing strategies for process control based on the ***Bidrectional Time-series State Transfer Network***.
+`Toc-BTSTN` is a Python package developed to model the metabolic responses to perturbations and optimize strategies for process control based on the ***Bidrectional Time-series State Transfer Network***.
 
 ## 2. Framework
 <div align=center><img src="image/framework.png" style="zoom: 30%;"/></div>

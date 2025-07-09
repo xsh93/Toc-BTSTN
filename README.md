@@ -133,7 +133,7 @@ loss = obj.fit(
 The pre-trained ***vdp_model*** [here](https://github.com/xsh93/Toc-BTSTN/tree/main/analysis/model/vdp_model) is used for trajectory prediction under specified perturbation sequence of ***μ***.
 ```python
 # Test data
-train_set = ['Test_1']
+test_set = ['Test_1']
 odata_test = odata.loc[odata['batch'].isin(test_set), :].reset_index(drop=True)
 pdata_test = pdata.loc[pdata['batch'].isin(test_set), :].reset_index(drop=True)
 
@@ -142,13 +142,13 @@ obj = BTSTN.load_pretrained(ipath="./analysis/model", model_name="vdp_model")
 
 # Time-series prediction under perturbations
 pred_data = obj.forecast(
-    odata=odata_test.iloc[:1, :].reset_index(drop=True),
-    pdata=pdata_test.iloc[:1, :].reset_index(drop=True),
-    sdata=pdata_test[0:-1].reset_index(drop=True),
+    odata=odata_test.iloc[:1, :], # use observation of the first time point
+    pdata=pdata_test.iloc[:1, :],
+    sdata=pdata_test[0:-1],
     start=0,
     reset=True,
     max_gap=15,
-    learning_rate=0.01,
+    learning_rate=0.1, # Optimal learning_rate should be obtained from pre-experiment
     decay_gamma=0.98,
     epoch=1000,
     patience=100,
@@ -162,7 +162,7 @@ The pre-trained ***vdp_model*** [here](https://github.com/xsh93/Toc-BTSTN/tree/m
 
 ```python
 # Test data
-train_set = ['Test_1']
+test_set = ['Test_1']
 odata_test = odata.loc[odata['batch'].isin(test_set), :].reset_index(drop=True)
 pdata_test = pdata.loc[pdata['batch'].isin(test_set), :].reset_index(drop=True)
 
@@ -170,20 +170,20 @@ pdata_test = pdata.loc[pdata['batch'].isin(test_set), :].reset_index(drop=True)
 obj = BTSTN.load_pretrained(ipath="./analysis/model", model_name="vdp_model")
 
 # Set target
-rdata = pd.DataFrame([[1.5, 0]], columns=['x', 'y'])
-pred_step = 500
+rdata = pd.DataFrame([[1.5, 0]], columns=['x', 'y']) # set taget system states
+pred_step = 500 # set taget time point
 
 # Optimization of control strategies
 scheme = obj.search_scheme(
-    odata=odata_test.iloc[:1, :].reset_index(drop=True),
-    pdata=pdata_test.iloc[:1, :].reset_index(drop=True),
+    odata=odata_test.iloc[:1, :], # use observation of the first time point
+    pdata=pdata_test.iloc[:1, :],
     rdata=rdata,
     start=-1,
     pred_step=pred_step,
     n_scheme=-1,
     reset=True,
     max_gap=15,
-    learning_rate=0.01,
+    learning_rate=0.1, # Optimal learning_rate should be obtained from pre-experiment
     decay_gamma=0.97,
     epoch=500,
     patience=30,

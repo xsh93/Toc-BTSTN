@@ -77,7 +77,7 @@ pdata = pd.read_csv("./analysis/data/perturb_data.csv", sep=",")
 `BTSTN` provides a simple tool to define the structure of model and training parameters.
 
 ```python
-# Initialize the model
+# Specify the structure of the model
 obj = BTSTN(
     o_features=2,
     o_hid_dims=2,
@@ -110,6 +110,7 @@ saving_prefix = 'vdp_model'
 os.makedirs(os.path.join(saving_path, saving_prefix), exist_ok=True)
 
 # Train model
+# Specify the following parameters for training
 loss = obj.fit(
     odata=odata_train,
     pdata=pdata_train,
@@ -148,7 +149,7 @@ pred_data = obj.forecast(
     start=0,
     reset=True,
     max_gap=15,
-    learning_rate=0.1, # Optimal learning_rate should be obtained from pre-experiment
+    learning_rate=0.1, # Optimal learning_rate obtained from pre-experiment
     decay_gamma=0.98,
     epoch=1000,
     patience=100,
@@ -183,7 +184,7 @@ scheme = obj.search_scheme(
     n_scheme=-1,
     reset=True,
     max_gap=15,
-    learning_rate=0.1, # Optimal learning_rate should be obtained from pre-experiment
+    learning_rate=0.1, # Optimal learning_rate obtained from pre-experiment
     decay_gamma=0.97,
     epoch=500,
     patience=30,

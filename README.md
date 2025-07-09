@@ -1,4 +1,4 @@
-<h1 align="left">Toc-BTSTN (version 1.0)</h1>
+<h1 align="left">Tac-BTSTN (version 1.0)</h1>
 
 <p align="left">
     <a href="https://www.python.org/"><img alt="Python version" src="https://img.shields.io/badge/Python-v3.9-blue?logo=python&logoColor=white"></a>
@@ -7,7 +7,7 @@
 </p>
 
 ## 1. Introduction
-`Toc-BTSTN` is a Python package developed to model the metabolic responses to perturbations and optimize strategies for process control based on the ***Bidrectional Time-series State Transfer Network***.
+`Tac-BTSTN` is a Python package developed to model the metabolic responses to perturbations and optimize strategies for process control based on the ***Bidrectional Time-series State Transfer Network***.
 
 ## 2. Framework
 <div align=center><img src="image/framework.png" style="zoom: 30%;"/></div>
@@ -22,14 +22,14 @@ Clone the repository and install the required dependencies:
 
 ```bash
 git clone https://github.com/xsh93/Toc-BTSTN.git
-cd Toc-BTSTN
+cd Tac-BTSTN
 pip install -r requirements.txt
 ```
 ### Adding Toc-BTSTN to Your Environment
 Before importing BTSTN, add it to your Python path:
 ```python
 import sys
-sys.path.insert(0, 'your_path/Toc-BTSTN')
+sys.path.insert(0, 'your_path/Tac-BTSTN')
 ```
 
 ### Importing BTSTN
